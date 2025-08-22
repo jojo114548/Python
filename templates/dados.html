@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/TabelaDados.css">
+    <title>Usuarios</title>
+</head>
+<body>
+     
+     
+<div class="container-dados">
+
+
+    {% block  conteudo %}
+      <h2>Usuarios cadastrados</h2>
+      <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Idade</th>
+                <th>Senha</th>
+            </tr>
+          {%for i in usuario %}
+
+                <tr>
+                    <td>{{i.nome}}</td>
+                  <td>{{i.idade}}</td>
+                  <td>{{i.email}}</td>
+                  <td>{{i.senha}}</td>
+                   {% endfor %}
+                </tr>
+
+            </tbody>
+        </thead>
+      </table>
+
+ 
+    {% endblock %}
+
+   </div>
+ 
+</body>
+</html>
