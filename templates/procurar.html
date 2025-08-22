@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procurar Usuarios</title>
+</head>
+<body>
+
+<form action="/procurar/" method="GET">
+  <label for="nome">Procurar pelo Nome</label>
+<input type="text" placeholder="Digite pelo nome" name="nome" id="nome">
+<button type="submit">Buscar</button>
+
+
+
+    </form>
+
+    <h2>Procurar {{nome}}</h2>
+      <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+               <th>Email</th>
+                <th>Idade</th>
+              
+            </tr>
+
+              {%for usuario in usuarios%}
+                {%if nome == usuario.nome%}
+                   <td >{{usuario.nome}}</td>
+                  <td>{{usuario.cpf}}</td>
+                  <td>{{usuario.email}}</td>
+                  <td>{{usuario.idade}}</td>
+              
+                {%endif%}
+              {%endfor%}
+
+ </tbody>
+        </thead>
+      </table>
+  
+
+</body>
+</html>
